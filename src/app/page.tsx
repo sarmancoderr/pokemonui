@@ -5,7 +5,7 @@ import FormParamsPage from "./FormParamsPage"
 import Pokemon from "./Pokemon"
 import { BASE_URL } from "@/vars"
 
-export const Home: NextPage = async function Home({searchParams: {page = 1, pageSize = 20}}: any) {
+export default async function Home({searchParams: {page = 1, pageSize = 20}}: any) {
   const params = new URLSearchParams({})
   params.append('limit', pageSize)
   params.append('offset', ((Number(page) - 1) * pageSize).toString())
@@ -33,5 +33,3 @@ export const Home: NextPage = async function Home({searchParams: {page = 1, page
     </main>
   )
 }
-
-export default Home
